@@ -3,14 +3,14 @@ using HairSalon.Models;
 
 namespace HairSalon.Models
 {
-    public class HairSalonContext : DbContext //class inherits from Entity, ensures all builtin DbContext functionality
+    public class HairSalonContext : DbContext
     {
-        public virtual DbSet<ParentClassName> ParentClassNames { get; set; } //allows lazy loading
-        public DbSet<ChildClass> ChildClassNames { get; set; } //represents the db table and lets interaction
+        public virtual DbSet<Stylist> Stylists { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
-        public ProjectNameContext(DbContextOptions options) : base(options) { } //dependency injection, constructor inherits the behavior of its parent class constructor
+        public HairSalonContext(DbContextOptions options) : base(options) { }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) //enables lazy-loading
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();
         }

@@ -9,63 +9,63 @@ namespace HairSalon.Controllers
 {
     public class ClientsController : Controller
     {
-        private readonly ProjectNameContext _db; //TODO declares private and readonly field of ProjectNameContext
-        public ItemsController(ToDoListContext db)
+        private readonly HairSalonContext _db;
+        public ClientsController(HairSalonContext db)
         {
-            _db = db; //allows to set a value for _db to ProjectNameContext due to dependency injection
+            _db = db;
         }
         public ActionResult Index()
         {
-            List<Item> model = _db.Items.Include(items => items.Category).ToList(); //utlize eager-loading by using Entity's built-in Include(), eager loading means that all information related to an oject should be loaded, for each item in the database include the category it belongs to and then put all the items into a list
+            List<Client> model = _db.Clients.Include(clients => clients.Stylist).ToList();
             return View(model);
         }
 
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name"); //ViewBag sends temporary data from a controller to a view. SelectList will provide all the categories for a dropdown menu in addtion to setting the selection option value to CategoryId and the select option display name to Name. that way a user can select an Item from the dropdown to associate with the Category in question
+            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "StylistName");
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(ClassName classname) //POST request, take var as an argument, add it to the DBSet, and save changes to db, redirects user to Index view
+        public ActionResult Create(Client client)
         {
-            _db.Items.Add(item); //method we run in DbSet property of our DbContext
-            _db.SaveChanges(); //method run on DbConect
+            _db.Clients.Add(client);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult Details(int id) //takes the id of the entry we want to view as its sole parameter, need to match the property of the anonymous object we created using the ActionLink()
+        public ActionResult Details(int id)
         {
-            Item thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id); //LINQ method that starts by looking at db.Items (items table), finds any items where the ItemId of an item is equal to the id we have passed into this method
-            return View(thisItem);
+            Client thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+            return View(thisClient);
         }
 
-        public ActionResult Edit(int id) //GET, will route to a page with a form for updating an item
+        public ActionResult Edit(int id)
         {
-            var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-            ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-            return View(thisItem);
+            var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "StylistName");
+            return View(thisClient);
         }
 
         [HttpPost]
-        public ActionResult Edit(Item item) //actually updates the item
+        public ActionResult Edit(Client client)
         {
-            _db.Entry(item).State = EntityState.Modified; //find and update all of the properties of the item we are editing by passing the item (our route parameter) into Entry(). then we need to update its State property to EntityState.Modified. This is so Entity knows that the entry has been modified, as it is not explicitly tracking it(we have not actually retrieved it from the database). once we have marked this specific entrys state as Modified, we can then askk the db to SaveChanges() and then redirect to the Index
+            _db.Entry(client).State = EntityState.Modified;
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public ActionResult Delete(int id)
         {
-            var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-            return View(thisItem);
+            var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+            return View(thisClient);
         }
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id) //POST action is named DeleteConfirmed both GET and POST action methods for Delete take id as a paramter. C# will not allow to have 2 methods with the same signature. (signature is the method name and parameters. To avoid eerors we call one method Delte and the other DeleteConfirmed. Action name is utilized the proper Delete ction)
+        public ActionResult DeleteConfirmed(int id)
         {
-            var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-            _db.Items.Remove(thisItem); //Remove() built-in method
+            var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+            _db.Clients.Remove(thisClient);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
