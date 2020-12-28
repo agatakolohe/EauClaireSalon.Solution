@@ -1,6 +1,6 @@
 <div align="center">
 
-# Eua Claire's Salon
+# Eau Claire's Salon
 
 </div>
 
