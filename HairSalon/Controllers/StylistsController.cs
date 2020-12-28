@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
-// using ProjectName.Models;
+using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ProjectName.Controllers //TODO
+namespace HairSalon.Controllers
 {
-    public class ParentClassModelsController : Controller
+    public class StylistsController : Controller
     {
         private readonly ProjectNameContext _db; //allows us to use lazy loading
 

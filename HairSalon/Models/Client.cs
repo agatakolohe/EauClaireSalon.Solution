@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace ProjectName.Models //TODO
+namespace HairSalon.Models
 {
-    public class ChildClass
+    public class Client
     {
         //fields { get; set; }
         //public int ParentClassId {get; set; }

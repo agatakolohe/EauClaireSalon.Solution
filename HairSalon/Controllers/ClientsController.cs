@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
-// using ProjectName.Models; TODO
+using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ProjectName.Controllers //TODO
+namespace HairSalon.Controllers
 {
-    public class ChildClassesController : Controller //TODO
+    public class ClientsController : Controller
     {
         private readonly ProjectNameContext _db; //TODO declares private and readonly field of ProjectNameContext
         public ItemsController(ToDoListContext db)

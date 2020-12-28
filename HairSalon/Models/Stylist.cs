@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace ProjectName.Models
+namespace HairSalon.Models
 {
-    public class ParentClass
+    public class Stylist
     {
         public ParentClass()
         {

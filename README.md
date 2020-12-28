@@ -1,18 +1,34 @@
 <div align="center">
 
-# Application Name
+# Eua Claire's Salon
 
 </div>
 
 <div align="center">
 <img src="https://github.com/agatakolohe.png" width="200px" height="auto" >
 </div>
-<h3 align="center">Description of application, date-2020</h3>
+<h3 align="center">Database Basics with C#, MySQL & Entity, 12-28-2020</h3>
 <h4 align="center"> By Agata Kolodziej</h4>
 
 ## Description
 
-Purpose usage, detailed explanation what is does and any other information you want users and other developers to have
+This is an MVC web application to help Claire(user) manage their employees (stylists) and the stylists' clients. The user should be able to add a list of stylists working at the salon, and for each stylist add clients who see that stylists. The stylists have specific specialities, so each client can only belong to a single stylist.
+
+Production Database Name: agata_kolodziej
+Exposted Database file: agata_kolodziej.sql
+Main Project Folder: HairSalon
+
+## User Stories
+
+<details>
+    <summary>Expand User Stories</summary>
+
+- As the salon owner, I need to be able to see a list of all stylists.
+- As the salon owner, I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist.
+- As the salon owner, I need to add new stylists to our system when they are hired.
+- As the salon owner, I need to be able to add new clients to a specific stylist. I should not be able to add a client if no stylists have been added.
+
+</details>
 
 ## Specifications
 
@@ -36,7 +52,7 @@ Purpose usage, detailed explanation what is does and any other information you w
 
 ##### Open Locally
 
-- Click on the link to my repository: [My Repository]()
+- Click on the link to my repository: [My Repository](https://github.com/agatakolohe/EauClaireSalon.Solution.git)
 - Click on the green "Code" button and copy the repository URL
 - Open your terminal and use the command `git clone REPO URL HERE` into the directory you would like to clone the repository
 - Open in text editor to view code and make changes
