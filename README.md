@@ -30,18 +30,6 @@ Main Project Folder: HairSalon
 
 </details>
 
-## Specifications
-
-<details>
-  <summary>Expand Specs</summary>
-
-### Describe: Name()
-
-| Test | Expect |
-| ---- | ------ |
-
-</details>
-
 ## Setup/Installation Requirements
 
 ##### Software Requirements
@@ -67,29 +55,23 @@ In order to run the application, please install .NET for your computer to recogn
 
 ##### Compiling
 
-- Navigate to the TODO folder in the command line
+- Navigate to the HairSalon folder in the command line
 - Use the command `dotnet build` to compile
 
 ##### Installing Packages
 
-- Navigate to the TODO folder in the command line
+- Navigate to the HairSalon folder in the command line
 - Use the command `dotnet restore`
-
-##### Run Tests
-
-- Navigate to TODO folder in the command line
-- Use the commands `dotnet build` and `dotnet restore` to make sure code is compiled and packages are installed
-- Use the command `dotnet test` to run tests on all test methods
 
 ##### View In Browser
 
-- To view in browser, navigate to TODO folder in the command line
+- To view in browser, navigate to HairSalon folder in the command line
 - Use the command `dotnet run` to execute the compiled code and start a localhost
 - In browser navigate to http://localhost:5000
 
 ## Known Bugs
 
-TODO
+No known bugs present
 
 ## Support and Contact Details
 
@@ -109,10 +91,10 @@ TODO
 - GitHub
 - HTML
 - HTTP
+- MySQLWorkbench
 - Razor
 - REPL
 - RESTful Conventions
-- [Unsplash](https://unsplash.com/)
 - VS Code
 
 ### License
