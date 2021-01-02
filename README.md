@@ -65,8 +65,8 @@ In order to run the application, please install .NET for your computer to recogn
 
 ##### View In Browser
 
-- To view in browser, navigate to HairSalon folder in the command line
-- Use the command `dotnet run` to execute the compiled code and start a localhost
+- To view in browser, navigate to HairSalon folder in the command line.
+- Use the command `dotnet run` to execute the compiled code and start a localhost.
 - In browser navigate to http://localhost:5000
 
 ## Known Bugs
